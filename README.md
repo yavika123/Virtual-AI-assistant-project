@@ -28,3 +28,14 @@ This project is a basic Virtual AI Assistant chatbot that responds to user queri
 - What is SQL?
 - Give interview tips
 - Help with resume
+
+## Screenshots
+
+### Chat Interface
+![Chat UI] (chat-ui.png)
+
+### Response Output
+![Response] (response.png)
+
+### Backend Running
+![Backend] (backend-running.png)
