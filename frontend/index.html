@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Assistant</title>
+</head>
+<style>
+body { font-family: Arial; text-align: center; }
+input { padding: 10px; width: 250px; }
+button { padding: 10px; }
+</style>
+<body>
+  <h2>AI Virtual Assistant</h2>
+
+  <input type="text" id="userInput" placeholder="Ask something..." />
+  <button onclick="sendMessage()">Send</button>
+
+  <p id="response"></p>
+
+  <script>
+    async function sendMessage() {
+      let input = document.getElementById("userInput").value;
+
+      let res = await fetch("http://127.0.0.1:5000/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: input})
+      });
+
+      let data = await res.json();
+      document.getElementById("response").innerText = data.reply;
+    }
+  </script>
+</body>
+</html>
